@@ -5,16 +5,17 @@ public class Sketch extends PApplet {
    *    Draws a Pig 
    *  @author: George D.
    */
-  
-  float fltRandX = 0;//random(-105, 105);
-  float fltRandY = 0;//random(-200, 105);
+  // declare variables
+  float fltRandX = 0;
+  float fltRandY = 0;
   int intRed = (int)(random(0,256));
   int intGreen = (int)(random(0,256));
   int intBlue = (int)(random(0,256));
-  float fltWidth = 1000;
+  float fltWidth = 1;
   float fltHeight = 1;
   
-  public void randomize(float fltWidthRatio, float fltHeightRatio) {    
+  public void randomize(float fltWidthRatio, float fltHeightRatio) {   
+    // Checks which dementions changed 
     if ((fltWidth != width)&&(fltHeight != height)){
       fltRandX = random(-106, 106) * fltWidthRatio;
       fltRandY = random(-201, 106) * fltHeightRatio;
@@ -43,7 +44,8 @@ public class Sketch extends PApplet {
     // Allows window to be resized
     surface.setResizable(true);
   }
-  public void time(int intDigitX, int intDigitY, int intDigit){
+  public void time(int intDigitX, int intDigitY, int intDigit){ // prints out a digit
+    //Sets color to black
     fill(0);
 
     // top
