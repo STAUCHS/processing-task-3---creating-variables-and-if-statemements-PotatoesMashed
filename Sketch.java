@@ -2,27 +2,27 @@ import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 	/**
-   *    Draws a Pig 
+   *  Draws a Pig 
    *  @author: George D.
    */
   // declare variables
   float fltRandX = 0;
   float fltRandY = 0;
-  int intRed = (int)(random(0,256));
-  int intGreen = (int)(random(0,256));
-  int intBlue = (int)(random(0,256));
+  int intRed = (int) (random(0,256));
+  int intGreen = (int) (random(0,256));
+  int intBlue = (int) (random(0,256));
   float fltWidth = 1;
   float fltHeight = 1;
   
   public void randomize(float fltWidthRatio, float fltHeightRatio) {   
     // Checks which dementions changed 
-    if ((fltWidth != width)&&(fltHeight != height)){
+    if ((fltWidth != width) && (fltHeight != height)){
       fltRandX = random(-106, 106) * fltWidthRatio;
       fltRandY = random(-201, 106) * fltHeightRatio;
-      intRed = (int)(random(0,256));
-      intGreen = (int)(random(0,256));
-      intBlue = (int)(random(0,256));
-      fltWidth = (float)width;
+      intRed = (int) (random(0,256));
+      intGreen = (int) (random(0,256));
+      intBlue = (int) (random(0,256));
+      fltWidth = (float) width;
       fltHeight = height;
     } else if (width != fltWidth){
       fltRandX = random(-106, 106) * fltWidthRatio;
@@ -121,7 +121,7 @@ public class Sketch extends PApplet {
   }
 
   public void draw() {
-    // updates background
+    // Updates background
     fill(intRed, intGreen, intBlue);
     rect(0, 0, width, height);
 
@@ -133,7 +133,7 @@ public class Sketch extends PApplet {
     fltWidthRatio = (float)(width)/600;
     fltHeightRatio = (float)(height)/700;
     
-    // Randomizes position if dimentions change
+    // Randomizes position if dimensions change
     if ((fltWidth != width) || (fltHeight != height)){
       randomize(fltWidthRatio, fltHeightRatio);
     }
@@ -188,7 +188,7 @@ public class Sketch extends PApplet {
     endShape(CLOSE);  
     rect(363 * fltWidthRatio + fltRandX, 314 * fltHeightRatio + fltRandY, 15 * fltWidthRatio, 21 * fltHeightRatio); 
 
-    // prints the time
+    // Prints the time
     time(40, 40, hour() / 10);
     time(115, 40, hour() % 10);
     ellipse(195, 70, 6, 6);
